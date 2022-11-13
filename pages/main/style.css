@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.books-block {
+    max-width: 100%;
+    height: 500px;
+    margin: 0px auto;
+    background-color: #DCDCDC;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    padding: 20px 100px;
+}
+
+button {
+    width: 80px;
+    height: 40px;
+}
+
+/* Header */
+
+#header {
+    width: 100%;
+    height: 200px;
+    background-color: #383838;
+    display: flex;
+    color: #fff;
+}
+
+.header-logo {
+    height: 200px;
+    width: 200px;
+}
+
+/* Book cards */
+
+.book-card {
+    position: relative;
+    width: 250px;
+    height: 470px;
+    background-color: #fff;
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-image {
+    max-width: 100%;
+}
+
+.book-image img {
+    max-width: 250px;
+}
+
+.books-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Popup description */
+
+.book-description {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #DCDCDC;
+    z-index: 1;
+}
+
+
+
