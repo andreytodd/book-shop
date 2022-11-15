@@ -1,30 +1,9 @@
 import booksBlock from './index.mjs'
+import {addBtnListener, toggleHidden} from './btnFunctions.mjs'
+
 
 let fragment = new DocumentFragment();
 let id = 1
-
-function toggleHidden(btn) {
-    btn.classList.toggle('hidden')
-}
-
-let cart = []
-
-function updateCart(price, count) {
-    document.getElementById("sum").textContent = price;
-    document.getElementById("count").textContent = count;
-}
-
-function addBtnListener(btn, item) {
-    btn.addEventListener('click', function handleClick() {
-        price += item.price
-        count += 1
-        updateCart(price, count)
-        cart.push(item.id)
-})
-}
-
-let price = 0
-let count = 0
 
 fetch('../../books/books.json')
     .then(response => {
@@ -35,6 +14,10 @@ fetch('../../books/books.json')
             const bookCard = document.createElement("div")
             bookCard.classList.add('book-card')
             bookCard.setAttribute('data-id', id)
+            bookCard.setAttribute('data-price', book.price)
+            bookCard.setAttribute('data-author', book.author)
+            bookCard.setAttribute('data-title', book.title)
+            bookCard.setAttribute('data-imagelink', book.imageLink)
 
             const bookAuthor = document.createElement('p')
             bookAuthor.textContent = `${book.author}: ${book.title}`

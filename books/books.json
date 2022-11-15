@@ -7,7 +7,7 @@
   },
     {
       "author": "David Herman",
-      "imageLink": "add image to your project,put link to it there",
+      "imageLink": "../../assets/booksImg/David-Herman.jpg",
       "title": "Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript",
       "price": 22,
       "description": "Effective JavaScript is organized around 68 proven approaches for writing better JavaScript, backed by concrete examples. You’ll learn how to choose the right programming style for each project, manage unanticipated problems, and work more successfully with every facet of JavaScript programming from data structures to concurrency"
