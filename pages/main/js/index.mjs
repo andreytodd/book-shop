@@ -1,7 +1,9 @@
 
+import updatePopupCart from "./cart.mjs"
+import { toggleCart } from "./cart.mjs"
+import { updateCart } from "./btnFunctions.mjs"
+
 // Header
-import updatePopupCart from "../../cart.mjs"
-import { toggleCart } from "../../cart.mjs"
 
 const header = document.createElement('header')
 header.id = "header"
@@ -11,7 +13,10 @@ header.innerHTML = `
     </div>
     <div>
         <i class="fa fa-shopping-cart fa-4x" id="cart-item"></i>
-        <div class="cart-popup hidden"></div>
+        <div class="cart-popup hidden">
+
+        </div>
+        <button id="clear-button" onClick="window.location.reload()">Clear cart</button>
     </div>
     <div id="cart-info">
         <p>
@@ -23,7 +28,6 @@ header.innerHTML = `
     </div>
 `
 
-
 // Books block
 
 const booksBlock = document.createElement('div')
@@ -33,24 +37,21 @@ booksBlock.classList.add('books-block')
 
 document.body.prepend(header, booksBlock)
 
+
 // Popup shopping cart
 
-
-
-function removeFromCart() {
-    let index = JSON.parse(localStorage.cart).indexOf("1");
-    let cartItems = JSON.parse(localStorage.cart)
-    if (index > -1) {
-        cartItems.splice(index, 1);
-    }
-    localStorage.cart = JSON.stringify(cartItems)
+function clearStorage() {
+    localStorage.totalPrice = 0
+    localStorage.cart = []
+    localStorage.count = 0
 }
-
 
 document.getElementById('cart-item').addEventListener('click', toggleCart)
 document.getElementById('cart-item').addEventListener('click', updatePopupCart)
-window.addEventListener('load', updatePopupCart)
 
+document.getElementById('clear-button').addEventListener('click', updateCart)
+document.getElementById('clear-button').addEventListener('click', clearStorage)
+document.getElementById('clear-button').addEventListener('click', window.location.reload)
 
 
 

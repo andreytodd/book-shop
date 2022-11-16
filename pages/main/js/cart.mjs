@@ -11,14 +11,21 @@ function arrToObj(arr) {
         } else {
             obj[nr] += 1
         }
-
     })
     return obj
 }
 
+function getShoppingCart() {
+    if (!localStorage.cart) {
+        localStorage.cart = JSON.stringify([]);
+    }
+    let cart = arrToObj(JSON.parse(localStorage.cart))
+    return cart
+}
+
 function updatePopupCart() {
     let shoppingCart = document.querySelector('.cart-popup')
-    let cartTotal = arrToObj(JSON.parse(localStorage.cart))
+    let cartTotal = getShoppingCart()
     shoppingCart.innerHTML = ''
     for (const [key, value] of Object.entries(cartTotal)) {
         let book = document.querySelector(`[data-id="${key}"]`)
@@ -33,17 +40,10 @@ function updatePopupCart() {
                     <p>Pcs: ${value}</p>
                     <p>Total amount: ${book.dataset.price * value}</p>
                 </div>
-                <button class="remove-btn-cart" onclick='somefn()'>Remove from cart</button>
             </div>
         `)
-
     }
 }
 
-// export function logfn() {
-//     console.log('hi from logfn')
-// }
-
-console.log(document.querySelectorAll('.remove-btn-cart'))
 
 export default updatePopupCart;

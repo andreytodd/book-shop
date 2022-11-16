@@ -45,6 +45,7 @@ button {
 .fa {
     font-size: 60;
     cursor: pointer;
+
 }
 
 /* Book cards */
@@ -67,7 +68,7 @@ button {
 
 .book-image img {
     width: 250px;
-    max-height: 300px;
+    height: 300px;
     z-index: 1;
 }
 
