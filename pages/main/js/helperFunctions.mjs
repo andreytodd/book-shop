@@ -27,8 +27,9 @@ function updateCartCount() {
 export function addBtnListener(btn) {
     btn.addEventListener('click', function handleClick() {
         updateCartStorage(btn)
-        // updateCartPrice(book)
         updateCartCount()
+        updatePopupCart()
+        unhideCart()
 })
 }
 
@@ -65,6 +66,11 @@ export function getShoppingCart() {
 export function toggleCart() {
     const shoppingCart = document.querySelector('.cart-popup')
     shoppingCart.classList.toggle('hidden')
+}
+
+function unhideCart() {
+    const shoppingCart = document.querySelector('.cart-popup')
+    shoppingCart.classList.remove('hidden')
 }
 
 function removeItemFromCart(btn) {

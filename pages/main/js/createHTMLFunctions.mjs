@@ -1,7 +1,7 @@
 import { getShoppingCart } from "./helperFunctions.mjs"
 import booksBlock from './index.mjs'
 import {addBtnListener, toggleHidden } from './helperFunctions.mjs'
-import { updatePopupCart } from './helperFunctions.mjs'
+
 
 /* Create book card in shopping cart */
 
@@ -58,12 +58,10 @@ export function createBookCard(book) {
                 toggleHidden(popupDescription)
             })
 
-
             const addBtn = document.createElement('button')
             addBtn.id = id
             addBtn.textContent = 'Add to cart'
             addBtnListener(addBtn)
-            addBtn.addEventListener('click', updatePopupCart)
 
             const buttonsDiv = document.createElement('div')
             buttonsDiv.classList.add('books-buttons')

@@ -16,7 +16,9 @@ header.innerHTML = `
         </div>
     </div>
     <div class="shopping-cart">
-        <i class="fa fa-shopping-cart fa-4x" id="cart-item"></i>
+        <div id="cart-item">
+            <i class="fa fa-shopping-cart fa-4x" ></i>
+        </div>
         <div class="cart-popup hidden"></div>
     </div>
 `
