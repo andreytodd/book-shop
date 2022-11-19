@@ -1,7 +1,9 @@
 import { getShoppingCart } from "./helperFunctions.mjs"
 import booksBlock from './index.mjs'
-import {addBtnListener, toggleHidden} from './helperFunctions.mjs'
+import {addBtnListener, toggleHidden } from './helperFunctions.mjs'
 import { updatePopupCart } from './helperFunctions.mjs'
+
+/* Create book card in shopping cart */
 
 export function createBookInCart() {
     let cartTotal = getShoppingCart()
@@ -17,13 +19,15 @@ export function createBookInCart() {
                     <p>${book.dataset.author}</p>
                     <p>${book.dataset.title}</p>
                     <p>Pcs: ${value}</p>
-                    <p>Total amount: ${book.dataset.price * value}</p>
+                    <p class="total-book-price">Total amount: ${book.dataset.price * value}</p>
                 </div>
                 <button class="remove-cart-item" data-id="${key}">Remove</button>
             </div>
         `)
     }
 }
+
+/* Create book card in body */
 
 let fragment = new DocumentFragment();
 let id = 1
@@ -58,10 +62,8 @@ export function createBookCard(book) {
             const addBtn = document.createElement('button')
             addBtn.id = id
             addBtn.textContent = 'Add to cart'
-            addBtnListener(addBtn, book)
-            addBtn.addEventListener('click', function handleClick() {
-                updatePopupCart()
-            })
+            addBtnListener(addBtn)
+            addBtn.addEventListener('click', updatePopupCart)
 
             const buttonsDiv = document.createElement('div')
             buttonsDiv.classList.add('books-buttons')

@@ -16,14 +16,6 @@ function updateCartStorage(btn) {
       }
 }
 
-function updateCartPrice(book) {
-    if (!localStorage.totalPrice) {
-        localStorage.totalPrice = book.price
-    } else {
-        localStorage.totalPrice = Number(localStorage.totalPrice)+ book.price
-    }
-}
-
 function updateCartCount() {
     if (!localStorage.count) {
         localStorage.count = 1
@@ -32,19 +24,20 @@ function updateCartCount() {
     }
 }
 
-export function addBtnListener(btn, book) {
+export function addBtnListener(btn) {
     btn.addEventListener('click', function handleClick() {
         updateCartStorage(btn)
-        updateCartPrice(book)
+        // updateCartPrice(book)
         updateCartCount()
 })
 }
 
-/* Shopping cart functions */
+/* Storage functions */
 
-export function toggleCart() {
-    const shoppingCart = document.querySelector('.cart-popup')
-    shoppingCart.classList.toggle('hidden')
+export function clearStorage() {
+    localStorage.totalPrice = 0
+    localStorage.cart = []
+    localStorage.count = 0
 }
 
 export function arrToObj(arr) {
@@ -67,10 +60,11 @@ export function getShoppingCart() {
     return cart
 }
 
-export function clearStorage() {
-    localStorage.totalPrice = 0
-    localStorage.cart = []
-    localStorage.count = 0
+/* Shopping cart functions */
+
+export function toggleCart() {
+    const shoppingCart = document.querySelector('.cart-popup')
+    shoppingCart.classList.toggle('hidden')
 }
 
 function removeItemFromCart(btn) {
@@ -83,16 +77,43 @@ function removeItemFromCart(btn) {
     updatePopupCart()
 }
 
-export function updatePopupCart() {
+function createCartSummary() {
     let shoppingCart = document.querySelector('.cart-popup')
-    shoppingCart.innerHTML = ''
-    createBookInCart()
+    if (!shoppingCart.innerHTML) {
+        shoppingCart.insertAdjacentHTML("afterbegin", `<h3>Shopping cart empty`)
+    } else {
+        shoppingCart.insertAdjacentHTML("beforeend", `
+        <button>Finish order</button>
+        <p>${localStorage.totalPrice}</p>
+    `)}
+}
+
+function updateTotalSum() {
+    let prices = document.querySelectorAll(".total-book-price");
+    let total = 0;
+    prices.forEach(price => {
+        total += Number(price.innerHTML.replace( /^\D+/g, ''))
+    })
+    localStorage.totalPrice = total
+    console.log(localStorage.totalPrice)
+}
+
+function addRemoveListeners() {
     let buttons = document.querySelectorAll(".remove-cart-item")
     buttons.forEach(button => {
         button.addEventListener('click', function handleClick() {
             removeItemFromCart(button)
         })
     })
+}
+
+export function updatePopupCart() {
+    let shoppingCart = document.querySelector('.cart-popup')
+    shoppingCart.innerHTML = ''
+    createBookInCart()
+    updateTotalSum()
+    addRemoveListeners()
+    createCartSummary()
 }
 
 

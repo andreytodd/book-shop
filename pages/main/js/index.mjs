@@ -1,5 +1,4 @@
-// import { toggleCart, arrToObj, getShoppingCart } from "./cart.mjs"
-import { toggleCart, getShoppingCart, clearStorage, updatePopupCart} from "./helperFunctions.mjs"
+import { toggleCart, updatePopupCart} from "./helperFunctions.mjs"
 import { createBookCard } from "./createHTMLFunctions.mjs"
 
 // Header
@@ -7,13 +6,18 @@ import { createBookCard } from "./createHTMLFunctions.mjs"
 const header = document.createElement('header')
 header.id = "header"
 header.innerHTML = `
-    <div>
-        <img class="header-logo" src="../../assets/logos/fox-logo.png" alt="fox logo">
+    <div class="site-logo">
+        <div class="logo-header">
+            <img src="../../assets/logos/fox-logo.png" alt="fox logo">
+        </div>
+        <div class="header-heading">
+            <h1>Foxbook</h1>
+            <p>Your perfext book shop!</p>
+        </div>
     </div>
-    <div>
+    <div class="shopping-cart">
         <i class="fa fa-shopping-cart fa-4x" id="cart-item"></i>
         <div class="cart-popup hidden"></div>
-
     </div>
 `
 
