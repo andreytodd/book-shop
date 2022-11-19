@@ -1,4 +1,4 @@
-import { createBookInCart } from "./createHTMLFunctions.mjs";
+import { createBookInCart, createCartSummary } from "./createHTMLFunctions.mjs";
 
 /* Button functions */
 
@@ -83,17 +83,6 @@ function removeItemFromCart(btn) {
     updatePopupCart()
 }
 
-function createCartSummary() {
-    let shoppingCart = document.querySelector('.cart-popup')
-    if (!shoppingCart.innerHTML) {
-        shoppingCart.insertAdjacentHTML("afterbegin", `<h3>Shopping cart empty`)
-    } else {
-        shoppingCart.insertAdjacentHTML("beforeend", `
-        <button>Finish order</button>
-        <p>${localStorage.totalPrice}</p>
-    `)}
-}
-
 function updateTotalSum() {
     let prices = document.querySelectorAll(".total-book-price");
     let total = 0;
@@ -101,7 +90,6 @@ function updateTotalSum() {
         total += Number(price.innerHTML.replace( /^\D+/g, ''))
     })
     localStorage.totalPrice = total
-    console.log(localStorage.totalPrice)
 }
 
 function addRemoveListeners() {
@@ -117,8 +105,8 @@ export function updatePopupCart() {
     let shoppingCart = document.querySelector('.cart-popup')
     shoppingCart.innerHTML = ''
     createBookInCart()
-    updateTotalSum()
     addRemoveListeners()
+    updateTotalSum()
     createCartSummary()
 }
 

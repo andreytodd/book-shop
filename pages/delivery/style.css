@@ -1,0 +1,79 @@
+@import url('../main/style.css');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;
+}
+
+main {
+    margin-top: 140px;
+}
+
+/* Header */
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 140px;
+    background: #485563;  /* fallback for old browsers */
+    background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    z-index: 2;
+    position: fixed;
+}
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    margin-left: 70px;
+}
+
+.site-logo h1 {
+    color: #FFF;
+    font-size: 60px;
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+}
+
+.site-logo p {
+    margin: 0;
+    padding: 0;
+}
+
+.header-heading {
+    padding-bottom: 20px;
+    margin-left: -20px;
+}
+
+.logo-header {
+    display: flex;
+    align-items: center;
+}
+
+
+.logo-header img {
+    height: 150px;
+    width: 150px;
+}
+
+.shopping-cart {
+    position: relative;
+    margin-top: 35px;
+}
+
+#cart-item {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fa {
+    font-size: 60;
+    cursor: pointer;
+    padding-right: 80px;
+}
+

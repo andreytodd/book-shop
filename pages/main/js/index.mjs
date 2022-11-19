@@ -1,30 +1,15 @@
 import { toggleCart, updatePopupCart} from "./helperFunctions.mjs"
-import { createBookCard } from "./createHTMLFunctions.mjs"
+import { createBookCard, createHeader, createBooksBlock } from "./createHTMLFunctions.mjs"
 
 // Header
 
-const header = document.createElement('header')
-header.id = "header"
-header.innerHTML = `
-    <div class="site-logo">
-        <div class="logo-header">
-            <img src="../../assets/logos/fox-logo.png" alt="fox logo">
-        </div>
-        <div class="header-heading">
-            <h1>Foxbook</h1>
-            <p>Your perfext book shop!</p>
-        </div>
-    </div>
-    <div class="shopping-cart">
-        <div id="cart-item">
-            <i class="fa fa-shopping-cart fa-4x" ></i>
-        </div>
-        <div class="cart-popup hidden"></div>
-    </div>
-`
+const header = createHeader()
 
-/* Fetch data */
+/* Books block */
 
+const booksBlock = createBooksBlock()
+
+/* Fetch data and create book cards */
 
 fetch('../../books/books.json')
     .then(response => {
@@ -36,12 +21,6 @@ fetch('../../books/books.json')
         })
     })
     .then(updatePopupCart)
-
-
-// Books block
-
-const booksBlock = document.createElement('div')
-booksBlock.classList.add('books-block')
 
 // Page rendering
 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="site-logo">
+            <div class="logo-header">
+                <a href="../main/index.html"><img src="../../assets/logos/fox-logo.png" alt="fox logo"></a>
+            </div>
+            <div class="header-heading">
+                <h1>Foxbook</h1>
+                <p>Your perfext book shop!</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="delivery-form">
+            <div class="form-wrap">
+                <form name="delivery-form" action="#">
+                    <p class="delivery-total-amount"></p>
+                    <div class="fname-wrap">
+                        <label for="fname">First name</label>
+                        <input type="text" name="shipping" id="fname" placeholder="First name" required><br>
+                    </div>
+                    <div class="lname-wrap">
+                        <label for="lname">Last name</label>
+                        <input type="text" name="shipping" id="lname" required><br>
+                    </div>
+                    <div class="date-wrap">
+                        <label for="ddate">Delivery date</label>
+                        <input type="date" name="shipping" id="ddate">
+                    </div>
+                    <div class="address-wrap">
+                        <p>Address</p>
+                        <div class="street-wrap">
+                            <label for="street">Street</label>
+                            <input type="text" name="shipping" id="street" placeholder="Street" required><br>
+                        </div>
+                        <div class="house-wrap">
+                            <label for="house">House number</label>
+                            <input type="number" name="hoshippinguse" id="house" placeholder="House nr" required><br>
+                        </div>
+                        <div class="flat-wrap">
+                            <label for="flat">Flat number</label>
+                            <input type="number" name="shipping" id="flat" placeholder="Flat nr" required><br>
+                        </div>
+                        <div class="payment-wrap">
+                            <p>Payment method</p>
+                            <div class="radio-input">
+                                <label for="cash">Cash</label>
+                                <input type="radio" id="cash" name="shipping" value="cash" checked>
+                            </div>
+                            <div class="radio-input">
+                                <label for="card">Card</label>
+                                <input type="radio" id="card" name="shipping" value="card">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="present-wrap">
+                        <input type="checkbox" id="pack" name="shipping" value="pack">
+                        <label for="pack">Pack as a gift</label><br>
+                        <input type="checkbox" id="postcard" name="shipping" value="postcard">
+                        <label for="postcard">Postcard</label><br>
+                        <input type="checkbox" id="discount" name="shipping" value="discount">
+                        <label for="discount">2% discount for next order</label><br>
+                        <input type="checkbox" id="pen" name="shipping" value="pen">
+                        <label for="pen">Branded pen or pencil</label><br>
+                    </div>
+                    <div class="submit-wrap">
+                        <input type="submit" value="Confirm order" name="shipping">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="./index.js"></script>
+</body>
+</html>
