@@ -14,7 +14,7 @@ export function createHeader() {
         </div>
         <div class="header-heading">
             <h1>Foxbook</h1>
-            <p>Your perfext book shop!</p>
+            <p>Your perfect book shop!</p>
         </div>
     </div>
     <div class="shopping-cart">
@@ -58,7 +58,7 @@ export function createBookCard(book) {
     bookTextinfo.classList.add('books-info')
     bookTextinfo.append(bookAuthor, bookPrice)
 
-    const infoBtn = document.createElement('button')
+    const infoBtn = document.createElement('div')
     infoBtn.classList.add('button', 'info')
     infoBtn.textContent = 'About'
     infoBtn.addEventListener('click', function handleClick() {
@@ -83,7 +83,8 @@ export function createBookCard(book) {
     bookImg.classList.add('book-image')
     bookImg.append(image)
 
-    const closeBtn = document.createElement('button')
+    const closeBtn = document.createElement('div')
+    closeBtn.classList.add('info-close-btn')
     closeBtn.textContent = 'Close'
     closeBtn.addEventListener('click', function handleClick() {
         toggleHidden(popupDescription)
@@ -136,9 +137,20 @@ export function createCartSummary() {
         shoppingCart.insertAdjacentHTML("beforeend", `
         <hr>
         <div class="order-summary">
-            <button><a class="finish-order" href="../delivery/index.html">Finish order</a></button>
-            <p>${localStorage.totalPrice} $</p>
+            <div class="order-btn"><a href="../delivery/index.html">Order</a></div>
+            <p>Total: ${localStorage.totalPrice} $</p>
         </div>
 
     `)}
+}
+
+/* Create footer */
+
+export function createFooter() {
+    const footer = document.createElement('footer')
+    footer.id = "footer"
+    footer.innerHTML = `
+
+`
+    return footer
 }

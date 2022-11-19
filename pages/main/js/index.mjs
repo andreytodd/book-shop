@@ -1,5 +1,5 @@
 import { toggleCart, updatePopupCart} from "./helperFunctions.mjs"
-import { createBookCard, createHeader, createBooksBlock } from "./createHTMLFunctions.mjs"
+import { createBookCard, createHeader, createBooksBlock, createFooter } from "./createHTMLFunctions.mjs"
 
 // Header
 
@@ -22,17 +22,21 @@ fetch('../../books/books.json')
     })
     .then(updatePopupCart)
 
+/* Footer */
+
+const footer = createFooter()
+
 // Page rendering
 
 let fragment = new DocumentFragment();
-fragment.prepend(header, booksBlock)
+fragment.prepend(header, booksBlock, footer)
 
 document.body.append(fragment)
 
 // Add event listeners
 
-document.getElementById('cart-item').addEventListener('click', toggleCart)
-document.getElementById('cart-item').addEventListener('click', updatePopupCart)
+document.querySelector('.fa-shopping-cart').addEventListener('click', toggleCart)
+document.querySelector('.fa-shopping-cart').addEventListener('click', updatePopupCart)
 
 export default booksBlock;
 

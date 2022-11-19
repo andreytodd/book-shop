@@ -16,9 +16,8 @@ header {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 140px;
-    background: #485563;  /* fallback for old browsers */
-    background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100px;
+    background: linear-gradient(to right, #29323c, #485563);
     display: flex;
     justify-content: space-between;
     color: #fff;
@@ -57,13 +56,14 @@ header {
 
 
 .logo-header img {
-    height: 150px;
-    width: 150px;
+    margin-top: 4px;
+    height: 120px;
+    width: 120px;
 }
 
 .shopping-cart {
     position: relative;
-    margin-top: 35px;
+    margin-top: 15px;
 }
 
 #cart-item {
@@ -71,9 +71,8 @@ header {
     justify-content: flex-end;
 }
 
-.fa {
+#cart-item > .fa {
     font-size: 60;
     cursor: pointer;
     padding-right: 80px;
 }
-
