@@ -147,7 +147,7 @@ button {
     position: relative;
     width: 200px;
     height: 420px;
-    background-color: #fff;
+    background-color: #CCC;
     margin: 20px 10px;
     display: flex;
     flex-direction: column;
