@@ -5,9 +5,14 @@ import { createBookCard, createHeader, createBooksBlock, createFooter } from "./
 
 const header = createHeader()
 
+/* Main */
+
+const main = document.createElement('main')
+
 /* Books block */
 
 const booksBlock = createBooksBlock()
+main.append(booksBlock)
 
 /* Fetch data and create book cards */
 
@@ -29,7 +34,7 @@ const footer = createFooter()
 // Page rendering
 
 let fragment = new DocumentFragment();
-fragment.prepend(header, booksBlock, footer)
+fragment.prepend(header, main, footer)
 
 document.body.append(fragment)
 

@@ -1,13 +1,8 @@
 @import url('../main/style.css');
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Dosis', sans-serif;
-}
-
 main {
     margin-top: 140px;
+    height: 700px;
 }
 
 /* Header */
@@ -76,3 +71,116 @@ header {
     cursor: pointer;
     padding-right: 80px;
 }
+
+/* Delivery form */
+
+.delivery-form {
+    margin: 20px auto;
+    background: rgba(0, 0, 0, 0.1);
+    width: 600px;
+    height: 650px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+input {
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+input:invalid {
+    border: red solid 1px;
+}
+
+.form-wrap {
+    margin: 0px auto;
+}
+
+form {
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FFF;
+}
+
+.present-wrap {
+    display: flex;
+}
+
+.name-wrap {
+    display: flex;
+}
+
+.fname-wrap, .lname-wrap, .street-wrap, .house-wrap, .flat-wrap {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fname-wrap label,
+.lname-wrap label,
+.date-wrap label,
+.street-wrap label,
+.house-wrap label,
+.flat-wrap label {
+    padding-bottom: 10px;
+}
+
+.date-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-wrap input {
+    width: 300px;
+    color: #756573;
+}
+
+.address-wrap {
+    display: flex;
+    margin-top: 20px;
+}
+
+.payment-wrap p {
+    text-align: center;
+    margin: 0;
+}
+
+.payment-input {
+    display: flex;
+}
+
+.radio-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 40px;
+}
+
+.present-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+#form-submit {
+    border: 1px solid red;
+    font-family: 'Dosis', sans-serif;
+}
+
+
+
+
