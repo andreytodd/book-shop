@@ -25,8 +25,10 @@ inputs.forEach(input => {
     input.onkeyup = () => {
         if (!input.checkValidity()) {
             submitBtn.style.border = '1px solid red'
+            submitBtn.disabled = true
         } else {
             submitBtn.style.border = '1px solid black'
+            submitBtn.disabled = false
         }
     }
 })
