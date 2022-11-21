@@ -56,6 +56,10 @@ button {
     margin-left: -20px;
 }
 
+.header-heading p {
+    padding-left: 4px;
+}
+
 .logo-header {
     display: flex;
     align-items: center;
@@ -394,9 +398,14 @@ button {
     height: 60px;
     background: linear-gradient(to right, #29323c, #485563);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     color: #fff;
 }
+
+#footer p {
+    padding-right: 50px;
+}
+
 
 
 

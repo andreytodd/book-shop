@@ -150,7 +150,7 @@ export function createFooter() {
     const footer = document.createElement('footer')
     footer.id = "footer"
     footer.innerHTML = `
-
+        <p>Created by Andrey Todd</p>
 `
     return footer
 }

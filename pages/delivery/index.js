@@ -21,6 +21,7 @@ ddate.setAttribute('min', tomorrow)
 const submitBtn = document.getElementById('form-submit')
 let inputs = document.querySelectorAll("[required]")
 
+
 inputs.forEach(input => {
     input.onkeyup = () => {
         if (!input.checkValidity()) {
@@ -32,3 +33,4 @@ inputs.forEach(input => {
         }
     }
 })
+

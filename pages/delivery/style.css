@@ -2,7 +2,7 @@
 
 main {
     margin-top: 140px;
-    height: 700px;
+    height: 100%;
 }
 
 /* Header */
@@ -42,6 +42,10 @@ header {
 .header-heading {
     padding-bottom: 20px;
     margin-left: -20px;
+}
+
+.header-heading p {
+    padding-left: 4px;
 }
 
 .logo-header {
